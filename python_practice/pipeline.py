@@ -75,3 +75,23 @@ const updateImg = async (url, ns, name, payload) => {
   return new_ppls;
 };
 """
+
+
+# for i in pipelines:
+#     print(i)
+#     pipeline = i['name']
+#     print(pipeline)
+#     payload = i['item']
+#
+#     print(payload)
+#     print(type(payload))
+# def create_a_pipeline(pipeline,namespace,payload)
+# #创建多个技能
+# def create_pipelines(namespace,pipelines=[]):
+#     #实例化类
+#     for i in pipelines:
+#         pipeline = i['name']
+#         payload = i['item']
+#         create_a_pipeline(pipeline,'aliwebdev',payload)
+#         time.sleep(1.5)
+#
