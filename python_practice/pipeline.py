@@ -95,3 +95,16 @@ const updateImg = async (url, ns, name, payload) => {
 #         create_a_pipeline(pipeline,'aliwebdev',payload)
 #         time.sleep(1.5)
 #
+
+def delete_image(self, image, namespace):
+    if self.token is None:
+        self.get_access_token()
+    if not self.get_image_definition(image, namespace):
+        self.my_logger.info("invaild operation: the image {} under namespace {} not exist".format(image, namespace))
+        return False
+    uri = self.cfg.get("common", "uri") + "/image/" + namespace + "/" + image
+    headers = {'Authorization': self.token}
+    response = requests.request("DELETE", uri, headers=headers)
+    if response.status_code == 204:
+        return True
+    return response
